@@ -375,8 +375,8 @@
               <figure class="gallery-figure">
                 <img
                   id="galleryImage"
-                  src="chart29_extended_comparison.png"
-                  alt="Extended comparison chart"
+                  src="nba-safe-chart-1.png"
+                  alt="NBA analysis chart"
                   loading="lazy"
                   decoding="async"
                 />
@@ -452,15 +452,6 @@
           RECKLESS: { label: "Reckless", color: "#ef4444" },
           CONSERVATIVE: { label: "Conservative", color: "#60a5fa" },
           INEFFECTIVE: { label: "Ineffective", color: "#f59e0b" },
-        };
-
-        const TEAM_ESPN = {
-          ATL: "atl", BOS: "bos", BKN: "bkn", CHA: "cha", CHI: "chi",
-          CLE: "cle", DAL: "dal", DEN: "den", DET: "det", GSW: "gs",
-          HOU: "hou", IND: "ind", LAC: "lac", LAL: "lal", MEM: "mem",
-          MIA: "mia", MIL: "mil", MIN: "min", NOP: "no", NYK: "ny",
-          OKC: "okc", ORL: "orl", PHI: "phi", PHX: "phx", POR: "por",
-          SAC: "sac", SAS: "sa", TOR: "tor", UTA: "utah", WAS: "wsh",
         };
 
         const panelIds = {
@@ -625,16 +616,15 @@
             });
             g.appendChild(ring);
 
-            const espnCode = TEAM_ESPN[team.team] || team.team.toLowerCase();
-            const img = mk("image", {
-              href: `https://a.espncdn.com/i/teamlogos/nba/500/${espnCode}.png`,
-              x: "-12",
-              y: "-12",
-              width: "24",
-              height: "24",
-              preserveAspectRatio: "xMidYMid meet",
+            const innerLabel = mk("text", {
+              "text-anchor": "middle",
+              "font-size": "8.5",
+              "font-weight": "700",
+              fill: "#eef4ff",
+              y: "2.5",
             });
-            g.appendChild(img);
+            innerLabel.textContent = team.team;
+            g.appendChild(innerLabel);
 
             const label = mk("text", {
               y: "30",
@@ -735,11 +725,8 @@
         if (!imageEl || !captionEl || !prevBtn || !nextBtn || !thumbsRoot) return;
 
         const charts = [
-          { file: "chart29_extended_comparison.png", title: "Extended dual-panel comparison", note: "Sensitive-only panel vs all-load panel side by side." },
-          { file: "chart31_iv_standings.png", title: "Standings IV check", note: "Instrument based on games behind playoff cut-off." },
-          { file: "chart35_usage_filter.png", title: "Usage control analysis", note: "Gap persistence after filtering by player usage level." },
-          { file: "chart36_star_hypothesis.png", title: "Star-player hypothesis test", note: "Checks whether star concentration explains the gap." },
-          { file: "chart37_censoring_check.png", title: "Censoring diagnostics", note: "Exposure-window and censoring robustness tests." }
+          { file: "nba-safe-chart-1.png", title: "Extended comparison chart", note: "Sensitive injuries vs all-load injuries, extended period analysis." },
+          { file: "nba-safe-chart-2.png", title: "Interactive matrix snapshot", note: "Team profile matrix based on return speed and re-injury risk." }
         ];
 
         let current = 0;
