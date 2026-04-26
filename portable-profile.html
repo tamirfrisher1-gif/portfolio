@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tamir Frisher | Portfolio</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --card: #121a30;
+        --text: #e9edff;
+        --muted: #a9b4d0;
+        --accent: #4fa3ff;
+        --accent-2: #6be4c8;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: radial-gradient(circle at top right, #1d2b4f, var(--bg) 60%);
+        color: var(--text);
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: min(1000px, 92%);
+        margin: 0 auto;
+      }
+
+      .hero {
+        min-height: 70vh;
+        padding: 1.2rem 1rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-image: linear-gradient(
+            rgba(11, 16, 32, 0.66),
+            rgba(11, 16, 32, 0.78)
+          ),
+          url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .top-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1rem;
+      }
+
+      .top-nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        opacity: 0.95;
+        padding-bottom: 0.2rem;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.2s ease;
+      }
+
+      .top-nav a.active {
+        border-bottom-color: var(--accent-2);
+      }
+
+      .hero-content {
+        max-width: 760px;
+        margin: 2.5rem auto 0;
+        text-align: center;
+      }
+
+      .eyebrow {
+        color: var(--accent-2);
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        margin-bottom: 0.45rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 6vw, 3.7rem);
+        margin-bottom: 0.7rem;
+        line-height: 1.1;
+      }
+
+      .subtitle {
+        color: #d7def5;
+        max-width: 680px;
+        margin: 0 auto 1.2rem;
+      }
+
+      .cta {
+        display: inline-block;
+        background: linear-gradient(90deg, var(--accent), #8cc5ff);
+        color: #081124;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 0.75rem 1.2rem;
+        border-radius: 999px;
+      }
+
+      #about {
+        margin-top: -2rem;
+        margin-bottom: 1rem;
+      }
+
+      .main-grid {
+        margin: 0 auto 2rem;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .card {
+        background: rgba(18, 26, 48, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 1rem;
+      }
+
+      .card h2 {
+        font-size: 1.22rem;
+        margin-bottom: 0.55rem;
+      }
+
+      .section-animate {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+
+      .section-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .timeline-item + .timeline-item {
+        margin-top: 0.9rem;
+        padding-top: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .timeline-item h3 {
+        font-size: 1.02rem;
+      }
+
+      .timeline-item span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .chips {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .chips li {
+        background: rgba(79, 163, 255, 0.17);
+        border: 1px solid rgba(79, 163, 255, 0.35);
+        border-radius: 999px;
+        padding: 0.32rem 0.75rem;
+        font-size: 0.91rem;
+      }
+
+      .project-controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .filter-btn {
+        background: rgba(79, 163, 255, 0.14);
+        border: 1px solid rgba(79, 163, 255, 0.38);
+        color: var(--text);
+        border-radius: 999px;
+        padding: 0.3rem 0.8rem;
+        cursor: pointer;
+      }
+
+      .filter-btn.active {
+        background: var(--accent);
+        color: #091126;
+        font-weight: 700;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.75rem;
+      }
+
+      .project-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 0.8rem;
+      }
+
+      .project-card h3 {
+        font-size: 0.98rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-top: 0.4rem;
+        color: #a6d7ff;
+        font-size: 0.82rem;
+      }
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.8rem;
+      }
+
+      figure {
+        border-radius: 12px;
+        overflow: hidden;
+        background: #0c1327;
+      }
+
+      figure img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+      }
+
+      figcaption {
+        padding: 0.65rem;
+        color: #d0daf7;
+        font-size: 0.9rem;
+      }
+
+      .language-row {
+        margin-top: 0.55rem;
+      }
+
+      .language-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.6rem;
+        font-size: 0.92rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .bar {
+        width: 100%;
+        height: 9px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .bar > span {
+        display: block;
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+
+      .contact-grid input,
+      .contact-grid textarea {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.17);
+        color: var(--text);
+        border-radius: 8px;
+        padding: 0.55rem 0.65rem;
+      }
+
+      .contact-grid textarea {
+        min-height: 100px;
+        resize: vertical;
+        grid-column: 1 / -1;
+      }
+
+      .contact-grid button {
+        width: fit-content;
+        background: linear-gradient(90deg, var(--accent), #8cc5ff);
+        color: #081124;
+        border: none;
+        border-radius: 999px;
+        padding: 0.55rem 1rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .cv-link {
+        display: inline-block;
+        margin-bottom: 0.7rem;
+        color: #9ed4ff;
+      }
+
+      footer {
+        width: min(1000px, 92%);
+        margin: 0 auto 2rem;
+        color: var(--muted);
+        display: grid;
+        gap: 0.3rem;
+      }
+
+      footer a {
+        color: #b9d5ff;
+      }
+
+      #toTop {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(18, 26, 48, 0.85);
+        color: var(--text);
+        cursor: pointer;
+        display: none;
+      }
+
+      #toTop.show {
+        display: block;
+      }
+
+      @media (max-width: 760px) {
+        .hero {
+          min-height: 62vh;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="top-nav">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="hero-content">
+        <p class="eyebrow">Statistics, Data Science and Business Student</p>
+        <h1>Tamir Frisher</h1>
+        <p class="subtitle">
+          Third-year student with hands-on experience in Python, R, SQL, and
+          machine learning, focused on turning data into actionable insights.
+        </p>
+        <a class="cta" href="mailto:Tamiravraham.frisher@mail.huji.ac.il">Get in Touch</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about" class="card section-animate">
+        <h2>Professional Summary</h2>
+        <p>
+          Passionate about explainable machine learning, statistical modeling,
+          and scalable technical development. Experienced in Python and R
+          workflows with a strong analytical mindset and leadership background.
+        </p>
+      </section>
+
+      <section class="main-grid">
+        <article id="education" class="card section-animate">
+          <h2>Education</h2>
+          <div class="timeline-item">
+            <h3>The Hebrew University of Jerusalem</h3>
+            <p>
+              <strong>B.Sc. in Statistics, Data Science and Business</strong>
+              (2023-2026), final semester, GPA: 88
+            </p>
+            <p><strong>M.Sc. in Data Science</strong>, expected graduation: 2028</p>
+          </div>
+        </article>
+
+        <article id="experience" class="card section-animate">
+          <h2>Experience</h2>
+          <div class="timeline-item">
+            <h3>Strategy Analyst | Cross River</h3>
+            <span>2025-2026</span>
+            <p>
+              Analyzed market trends and identified growth opportunities to
+              support data-backed strategic decisions.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h3>Teaching Assistant | Hebrew University</h3>
+            <span>2025-2026</span>
+            <p>
+              Graded Foundations of Programming assignments and collaborated on
+              grading standards with course staff.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h3>Squad Commander | IDF</h3>
+            <span>2019-2021</span>
+            <p>
+              Commanded and trained a unit of 80 soldiers while managing
+              schedules, logistics, and team development.
+            </p>
+          </div>
+        </article>
+
+        <article id="skills" class="card section-animate">
+          <h2>Skills</h2>
+          <ul class="chips">
+            <li>Python (Pandas, Scikit-learn, NumPy)</li>
+            <li>Advanced SQL (Window Functions, CTEs)</li>
+            <li>R</li>
+            <li>Java</li>
+            <li>Machine Learning</li>
+            <li>Explainable AI (SHAP, LIME, PFI)</li>
+            <li>Statistical Modeling</li>
+            <li>Data Visualization</li>
+            <li>Git and Cursor</li>
+          </ul>
+        </article>
+
+        <article id="projects" class="card section-animate">
+          <h2>Projects</h2>
+          <div class="project-controls">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ml">ML</button>
+            <button class="filter-btn" data-filter="sql">SQL</button>
+            <button class="filter-btn" data-filter="stats">Stats</button>
+          </div>
+          <div class="projects-grid">
+            <div class="project-card" data-category="ml stats">
+              <h3>Explainable ML Pipeline</h3>
+              <p>Built predictive models and interpreted outputs with SHAP, LIME, and PFI.</p>
+              <span class="badge">ML + Stats</span>
+            </div>
+            <div class="project-card" data-category="sql stats">
+              <h3>Large-Scale Data Mining</h3>
+              <p>Used advanced SQL queries and hypothesis testing for strategic recommendations.</p>
+              <span class="badge">SQL + Stats</span>
+            </div>
+            <div class="project-card" data-category="ml">
+              <h3>Model Optimization Toolkit</h3>
+              <p>Designed scalable algorithm workflows and cleaner experimentation loops.</p>
+              <span class="badge">ML</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card section-animate">
+          <h2>Certificates & Achievements</h2>
+          <div class="timeline-item">
+            <h3>Psychometric Exam</h3>
+            <span>Score: 719</span>
+          </div>
+          <div class="timeline-item">
+            <h3>Academic Milestone</h3>
+            <span>M.Sc. Data Science track started during final B.Sc. semester</span>
+          </div>
+        </article>
+
+        <article class="card section-animate">
+          <h2>Languages</h2>
+          <div class="language-row">
+            <div class="language-head"><span>Hebrew</span><span>Native</span></div>
+            <div class="bar"><span style="width: 100%"></span></div>
+          </div>
+          <div class="language-row">
+            <div class="language-head"><span>English</span><span>Native Proficiency</span></div>
+            <div class="bar"><span style="width: 95%"></span></div>
+          </div>
+          <div class="language-row">
+            <div class="language-head"><span>Russian</span><span>Conversational</span></div>
+            <div class="bar"><span style="width: 60%"></span></div>
+          </div>
+        </article>
+
+        <article class="card section-animate">
+          <h2>Image Highlights</h2>
+          <div class="image-grid">
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+                alt="Data dashboard visual"
+              />
+              <figcaption>Data storytelling and analytics</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+                alt="Collaboration in a strategy meeting"
+              />
+              <figcaption>Strategic decision support</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80"
+                alt="Code editor with machine learning code"
+              />
+              <figcaption>Technical and ML development</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="card section-animate">
+          <h2>Quick Contact</h2>
+          <a class="cv-link" href="Tamir Frisher CV.pdf" download>Download CV</a>
+          <form
+            class="contact-grid"
+            action="mailto:Tamiravraham.frisher@mail.huji.ac.il"
+            method="post"
+            enctype="text/plain"
+          >
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <p>Email: <a href="mailto:Tamiravraham.frisher@mail.huji.ac.il">Tamiravraham.frisher@mail.huji.ac.il</a></p>
+      <p>Phone: +972 52-327-1357</p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/tamir-frisher">linkedin.com/in/tamir-frisher</a>
+      </p>
+      <p>Location: Jerusalem, Israel</p>
+    </footer>
+    <button id="toTop" aria-label="Back to top">&#8593;</button>
+
+    <script>
+      (function () {
+        const sections = Array.from(document.querySelectorAll("main section[id], article[id], footer[id]"));
+        const navLinks = Array.from(document.querySelectorAll(".top-nav a"));
+        const toTop = document.getElementById("toTop");
+        const animated = document.querySelectorAll(".section-animate");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const projectCards = document.querySelectorAll(".project-card");
+
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const id = entry.target.getAttribute("id");
+              navLinks.forEach((a) => {
+                a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+              });
+            });
+          },
+          { rootMargin: "-30% 0px -55% 0px", threshold: 0.1 }
+        );
+        sections.forEach((s) => sectionObserver.observe(s));
+
+        const animateObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.15 }
+        );
+        animated.forEach((el) => animateObserver.observe(el));
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 420) {
+            toTop.classList.add("show");
+          } else {
+            toTop.classList.remove("show");
+          }
+        });
+        toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const filter = button.getAttribute("data-filter");
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            projectCards.forEach((card) => {
+              const categories = card.getAttribute("data-category") || "";
+              const show = filter === "all" || categories.indexOf(filter) !== -1;
+              card.style.display = show ? "block" : "none";
+            });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
