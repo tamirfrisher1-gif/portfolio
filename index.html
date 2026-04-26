@@ -123,17 +123,39 @@
           </h3>
           <p class="project-meta">Student ID 207677808 · Hebrew University</p>
           <p>
-            Statistical analysis of how accumulated workload relates to injury
-            risk among players, summarized in a formal capstone report
-            (Hebrew).
+            Causal study on NBA game load and injury risk using observational
+            game- and player-level data (injury logs, advanced box scores). I
+            engineered rolling 7-day workload features (games played, minutes,
+            back-to-back flags, usage intensity) and linked each game
+            appearance to a short post-game injury window to define injury
+            opportunities at scale.
+          </p>
+          <p>
+            The analysis moves from naive associations to causal estimators:
+            <strong>propensity score matching (PSM)</strong> to balance
+            high-load vs low-load players on observables,
+            <strong>difference-in-differences (DiD)</strong> to compare changes
+            in risk around load shifts, and an
+            <strong>intention-to-treat (ITT)</strong> design that exploits
+            <strong>exogenous schedule density</strong> (team calendar
+            congestion) rather than coach-discretionary minutes—addressing
+            selection and survivorship bias (including a falsification check on
+            contact injuries). Outcomes were also framed as
+            <strong>per-game injury risk</strong> to separate “more exposure
+            games” from “riskier minutes.” A follow-up sequence analysis used a
+            <strong>double ITT</strong> setup to study carryover from the prior
+            week’s congestion when current-week schedule intensity is held
+            fixed.
           </p>
           <p class="project-meta" lang="he" dir="rtl">
             פרויקט מסכם: השפעות עומס מצטבר על פציעות שחקנים
           </p>
           <ul class="chips project-tags">
-            <li>Statistics</li>
+            <li>Causal inference</li>
+            <li>PSM</li>
+            <li>DiD</li>
+            <li>ITT</li>
             <li>Sports analytics</li>
-            <li>Injury risk</li>
           </ul>
           <p>
             <a
