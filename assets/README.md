@@ -4,9 +4,9 @@ Brand assets for the site.
 
 ## Files
 
-- `headshot.jpg` — hero portrait (LinkedIn photo). Used in the hero portrait of `index.html` and `portable-profile.html`, and as the og:image / twitter:image.
-- `headshot.svg` — fallback monogram (TF in gold on navy). Not currently used; kept as a backup.
-- `favicon.svg` — small "T" favicon used in the browser tab.
+- `headshot.jpg` - hero portrait (LinkedIn photo). Used in the hero portrait of `index.html` and `portable-profile.html`, and as the og:image / twitter:image.
+- `headshot.svg` - fallback monogram (TF in gold on navy). Not currently used; kept as a backup.
+- `favicon.svg` - small "T" favicon used in the browser tab.
 
 ## Swapping the headshot
 

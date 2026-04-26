@@ -1,5 +1,5 @@
 /* =====================================================================
-   Tamir Frisher — Sports + Data brand
+   Tamir Frisher - Sports + Data brand
    Palette: deep navy + broadcast gold + ivory
    Typography: Antonio (display) · Inter (body) · JetBrains Mono (stats)
    ===================================================================== */
@@ -407,7 +407,7 @@ a {
   color: var(--gold);
 }
 
-/* About + Currently */
+/* About */
 
 .about-essay {
   display: grid;
@@ -419,35 +419,6 @@ a {
 .about-essay em {
   color: var(--gold);
   font-style: italic;
-}
-
-.currently {
-  margin-top: 1.4rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.85rem;
-}
-
-.currently-card {
-  border: 1px solid var(--gold-line);
-  background: var(--gold-wash);
-  border-radius: 8px;
-  padding: 0.8rem 0.9rem;
-}
-
-.currently-card-label {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--gold);
-  margin-bottom: 0.3rem;
-}
-
-.currently-card-text {
-  font-size: 0.93rem;
-  line-height: 1.45;
-  color: var(--ivory);
 }
 
 /* Timeline (Education + Experience) */
@@ -516,7 +487,7 @@ a {
 }
 
 /* =====================================================================
-   Projects — magazine layout
+   Projects - magazine layout
    ===================================================================== */
 
 .project-item {
@@ -1192,9 +1163,6 @@ footer {
   .hero-ctas,
   .scoreboard {
     justify-content: center;
-  }
-  .currently {
-    grid-template-columns: 1fr;
   }
   .matrix-layout {
     grid-template-columns: 1fr;
