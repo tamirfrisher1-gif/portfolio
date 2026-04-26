@@ -167,6 +167,28 @@ h2 {
   margin-top: 0.35rem;
 }
 
+.project-chart {
+  margin-top: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0c1327;
+}
+
+.project-chart img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+}
+
+.project-chart figcaption {
+  padding: 0.65rem 0.85rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
 .project-item h3 {
   font-size: 1.08rem;
   margin-bottom: 0.35rem;

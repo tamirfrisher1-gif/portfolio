@@ -215,6 +215,80 @@
             >
           </p>
         </article>
+
+        <article class="project-item">
+          <h3>
+            NBA return-to-play: internal load injuries and team-level medical
+            outcomes
+          </h3>
+          <p class="project-meta">
+            5,000+ documented return events · 15 seasons (2011-2025) · sensitive
+            load injuries (knee, plantar or calf)
+          </p>
+          <p>
+            I studied how NBA teams differ in managing
+            <strong>internal-tissue load injuries</strong>, where healing is
+            harder to monitor and return timing is especially sensitive to
+            medical judgment. The work compares teams on two axes: how often
+            players return faster than the league median rest window, and how
+            often they avoid the <strong>same injury recurring</strong> later in
+            the same season after that return.
+          </p>
+          <p>
+            Among teams with a high share of fast returns, outcomes split
+            sharply. For example, on one cluster (including
+            <strong>DEN</strong>, <strong>NYK</strong>, and <strong>LAC</strong>),
+            about <strong>38%</strong> of fast-return episodes were followed by
+            a same-type recurrence in-season. Another cluster (including
+            <strong>HOU</strong>, <strong>DAL</strong>, and <strong>PHX</strong>)
+            returned players as fast or faster, but recurrence was near
+            <strong>20%</strong>. The gap is on the order of
+            <strong>18 percentage points</strong> with very strong statistical
+            evidence (<strong>p &lt; 0.001</strong>).
+          </p>
+          <p>
+            I stress-tested alternative explanations. Injury severity and mean
+            return timing looked similar across groups. Playing time differed in
+            the aggregate, but after restricting to players with the same usage
+            rate, the minutes gap largely disappeared while the recurrence gap
+            remained. I also ran a <strong>within-player</strong> design that
+            compares each athlete only to their own prior returns from the same
+            injury type, and still saw a large gap (about
+            <strong>17 percentage points</strong>, <strong>p &lt; 0.001</strong>),
+            which supports a medical-process story rather than stable player
+            traits. When widening the outcome to all load injuries without
+            isolating internal presentations, the gap shrank to about
+            <strong>8.5 percentage points</strong> but stayed significant, which
+            is consistent with internal-tissue management being the sharpest
+            differentiator.
+          </p>
+          <p>
+            The pattern suggests real heterogeneity in how medical staffs balance
+            speed and safety: some organizations achieve fast return with much
+            lower repeat-injury risk without simply resting everyone longer. The
+            analysis cannot observe internal clinical data, so it cannot name
+            the exact knowledge gap, but it does highlight where better medical
+            decision support and knowledge sharing could reduce preventable
+            recurrences.
+          </p>
+          <figure class="project-chart">
+            <img
+              src="/tamir-frisher-personal-website/nba-rtp-internal-load-injuries-chart.png"
+              alt="Scatter plot of NBA teams by return speed versus same-injury recurrence safety, with quadrant labels"
+            />
+            <figcaption>
+              Return speed versus medical safety for sensitive internal load
+              injuries. Teams above the trend line outperform the league-wide
+              tradeoff (trend R = -0.36, p = 0.05).
+            </figcaption>
+          </figure>
+          <ul class="chips project-tags">
+            <li>Sports medicine analytics</li>
+            <li>Survival-style return metrics</li>
+            <li>Within-player inference</li>
+            <li>Robustness checks</li>
+          </ul>
+        </article>
       </section>
 
       <section class="card">
