@@ -178,7 +178,7 @@ h2 {
 .project-chart img {
   width: 100%;
   height: auto;
-  max-height: 520px;
+  max-height: 640px;
   object-fit: contain;
   display: block;
 }
