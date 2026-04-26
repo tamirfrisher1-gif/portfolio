@@ -735,24 +735,11 @@
         if (!imageEl || !captionEl || !prevBtn || !nextBtn || !thumbsRoot) return;
 
         const charts = [
-          { file: "chart22_team_matrix_final.png", title: "Team matrix final", note: "Core team profile matrix: fast return vs same-injury risk." },
-          { file: "chart23_team_matrix_logos.png", title: "Team matrix with logos", note: "Logo-based matrix variant for communication and presentation." },
-          { file: "chart24_strict_reinjury_matrix.png", title: "Strict re-injury matrix", note: "Strict same-injury definition in the same season." },
-          { file: "chart25_q1q2_reinjury_matrix.png", title: "Q1-Q2 return matrix", note: "Fast-return focused matrix using Q1+Q2 exposure." },
-          { file: "chart26_scope_comparison.png", title: "Scope comparison", note: "Sensitive injuries vs broader injury scope comparison." },
-          { file: "chart27_scope_comparison_final.png", title: "Scope comparison final", note: "Refined comparison after scope calibration and cleaning." },
-          { file: "chart28_extended_2011_2025.png", title: "Extended dataset matrix", note: "Extended timeline matrix covering 2011-2025." },
           { file: "chart29_extended_comparison.png", title: "Extended dual-panel comparison", note: "Sensitive-only panel vs all-load panel side by side." },
-          { file: "chart30a_dose_response.png", title: "Dose-response by injury type", note: "Q1-Q4 return timing vs re-injury rates across injury types." },
-          { file: "chart30b_iv_playoff.png", title: "Playoff IV check", note: "Instrumental variable diagnostic using playoff pressure window." },
           { file: "chart31_iv_standings.png", title: "Standings IV check", note: "Instrument based on games behind playoff cut-off." },
-          { file: "chart32_extreme_cases.png", title: "Extreme team cases", note: "Event-level trajectories for best and worst profile teams." },
-          { file: "chart33_confounding_checks.png", title: "Confounding checks", note: "Severity and same-player checks to test confounding alternatives." },
-          { file: "chart34_minutes_after_return.png", title: "Minutes after return", note: "Post-return load profile and re-injury relation." },
           { file: "chart35_usage_filter.png", title: "Usage control analysis", note: "Gap persistence after filtering by player usage level." },
           { file: "chart36_star_hypothesis.png", title: "Star-player hypothesis test", note: "Checks whether star concentration explains the gap." },
-          { file: "chart37_censoring_check.png", title: "Censoring diagnostics", note: "Exposure-window and censoring robustness tests." },
-          { file: "chart21_smart_teams.png", title: "Smart teams profile", note: "Early profile segmentation from fast vs safe team clusters." }
+          { file: "chart37_censoring_check.png", title: "Censoring diagnostics", note: "Exposure-window and censoring robustness tests." }
         ];
 
         let current = 0;
