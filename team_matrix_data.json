@@ -1,0 +1,231 @@
+{
+  "leagueFastRate": 26.68,
+  "leagueReinjuryRate": 23.78,
+  "leagueSafetyRate": 76.22,
+  "teams": [
+    {
+      "team": "ATL",
+      "n": 28,
+      "fastRate": 28.57,
+      "reinjuryRate": 35.71,
+      "safetyRate": 64.29,
+      "profile": "RECKLESS"
+    },
+    {
+      "team": "BKN",
+      "n": 30,
+      "fastRate": 16.67,
+      "reinjuryRate": 6.67,
+      "safetyRate": 93.33,
+      "profile": "CONSERVATIVE"
+    },
+    {
+      "team": "BOS",
+      "n": 83,
+      "fastRate": 26.51,
+      "reinjuryRate": 36.14,
+      "safetyRate": 63.86,
+      "profile": "INEFFECTIVE"
+    },
+    {
+      "team": "CHA",
+      "n": 30,
+      "fastRate": 20.0,
+      "reinjuryRate": 16.67,
+      "safetyRate": 83.33,
+      "profile": "CONSERVATIVE"
+    },
+    {
+      "team": "CHI",
+      "n": 43,
+      "fastRate": 34.88,
+      "reinjuryRate": 39.53,
+      "safetyRate": 60.47,
+      "profile": "RECKLESS"
+    },
+    {
+      "team": "CLE",
+      "n": 57,
+      "fastRate": 14.04,
+      "reinjuryRate": 24.56,
+      "safetyRate": 75.44,
+      "profile": "INEFFECTIVE"
+    },
+    {
+      "team": "DAL",
+      "n": 48,
+      "fastRate": 35.42,
+      "reinjuryRate": 18.75,
+      "safetyRate": 81.25,
+      "profile": "SMART_FAST"
+    },
+    {
+      "team": "DEN",
+      "n": 39,
+      "fastRate": 38.46,
+      "reinjuryRate": 38.46,
+      "safetyRate": 61.54,
+      "profile": "RECKLESS"
+    },
+    {
+      "team": "DET",
+      "n": 33,
+      "fastRate": 30.3,
+      "reinjuryRate": 33.33,
+      "safetyRate": 66.67,
+      "profile": "RECKLESS"
+    },
+    {
+      "team": "GSW",
+      "n": 36,
+      "fastRate": 36.11,
+      "reinjuryRate": 8.33,
+      "safetyRate": 91.67,
+      "profile": "SMART_FAST"
+    },
+    {
+      "team": "HOU",
+      "n": 58,
+      "fastRate": 31.03,
+      "reinjuryRate": 15.52,
+      "safetyRate": 84.48,
+      "profile": "SMART_FAST"
+    },
+    {
+      "team": "IND",
+      "n": 46,
+      "fastRate": 17.39,
+      "reinjuryRate": 15.22,
+      "safetyRate": 84.78,
+      "profile": "CONSERVATIVE"
+    },
+    {
+      "team": "LAC",
+      "n": 37,
+      "fastRate": 16.22,
+      "reinjuryRate": 32.43,
+      "safetyRate": 67.57,
+      "profile": "INEFFECTIVE"
+    },
+    {
+      "team": "LAL",
+      "n": 49,
+      "fastRate": 26.53,
+      "reinjuryRate": 14.29,
+      "safetyRate": 85.71,
+      "profile": "CONSERVATIVE"
+    },
+    {
+      "team": "MEM",
+      "n": 64,
+      "fastRate": 25.0,
+      "reinjuryRate": 17.19,
+      "safetyRate": 82.81,
+      "profile": "CONSERVATIVE"
+    },
+    {
+      "team": "MIA",
+      "n": 44,
+      "fastRate": 38.64,
+      "reinjuryRate": 29.55,
+      "safetyRate": 70.45,
+      "profile": "RECKLESS"
+    },
+    {
+      "team": "MIL",
+      "n": 68,
+      "fastRate": 32.35,
+      "reinjuryRate": 26.47,
+      "safetyRate": 73.53,
+      "profile": "RECKLESS"
+    },
+    {
+      "team": "MIN",
+      "n": 26,
+      "fastRate": 42.31,
+      "reinjuryRate": 11.54,
+      "safetyRate": 88.46,
+      "profile": "SMART_FAST"
+    },
+    {
+      "team": "NOP",
+      "n": 25,
+      "fastRate": 12.0,
+      "reinjuryRate": 12.0,
+      "safetyRate": 88.0,
+      "profile": "CONSERVATIVE"
+    },
+    {
+      "team": "NYK",
+      "n": 52,
+      "fastRate": 21.15,
+      "reinjuryRate": 32.69,
+      "safetyRate": 67.31,
+      "profile": "INEFFECTIVE"
+    },
+    {
+      "team": "ORL",
+      "n": 44,
+      "fastRate": 29.55,
+      "reinjuryRate": 27.27,
+      "safetyRate": 72.73,
+      "profile": "RECKLESS"
+    },
+    {
+      "team": "PHI",
+      "n": 87,
+      "fastRate": 27.59,
+      "reinjuryRate": 22.99,
+      "safetyRate": 77.01,
+      "profile": "SMART_FAST"
+    },
+    {
+      "team": "POR",
+      "n": 27,
+      "fastRate": 11.11,
+      "reinjuryRate": 14.81,
+      "safetyRate": 85.19,
+      "profile": "CONSERVATIVE"
+    },
+    {
+      "team": "SAC",
+      "n": 27,
+      "fastRate": 22.22,
+      "reinjuryRate": 22.22,
+      "safetyRate": 77.78,
+      "profile": "CONSERVATIVE"
+    },
+    {
+      "team": "SAS",
+      "n": 54,
+      "fastRate": 35.19,
+      "reinjuryRate": 24.07,
+      "safetyRate": 75.93,
+      "profile": "RECKLESS"
+    },
+    {
+      "team": "TOR",
+      "n": 50,
+      "fastRate": 26.0,
+      "reinjuryRate": 40.0,
+      "safetyRate": 60.0,
+      "profile": "INEFFECTIVE"
+    },
+    {
+      "team": "UTA",
+      "n": 42,
+      "fastRate": 35.71,
+      "reinjuryRate": 23.81,
+      "safetyRate": 76.19,
+      "profile": "RECKLESS"
+    },
+    {
+      "team": "WAS",
+      "n": 105,
+      "fastRate": 16.19,
+      "reinjuryRate": 25.71,
+      "safetyRate": 74.29,
+      "profile": "INEFFECTIVE"
+    }
+  ]
+}

@@ -20,7 +20,6 @@
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -28,25 +27,51 @@
         <p class="eyebrow">Statistics, Data Science and Business Student</p>
         <h1>Tamir Frisher</h1>
         <p class="subtitle">
-          Third-year student with hands-on experience in Python, R, SQL, and
-          machine learning, focused on turning data into actionable insights.
+          I design data products and applied research workflows that turn messy
+          data into clear decisions.
         </p>
-        <div class="hero-ctas" id="cv">
-          <a class="cta" href="mailto:Tamiravraham.frisher@mail.huji.ac.il"
-            >Get in Touch</a
-          >
+        <div class="hero-ctas">
           <a
-            class="cta cta-secondary"
-            href="/tamir-frisher-personal-website/Tamir%20Frisher%20CV.pdf"
+            id="cv"
+            class="cta"
+            href="Tamir%20Frisher%20CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             >Open CV</a
           >
+          <a class="cta cta-secondary" href="mailto:Tamiravraham.frisher@mail.huji.ac.il"
+            >Contact</a
+          >
         </div>
+        <p class="hero-note">
+          Available for internships · Last updated April 2026
+        </p>
       </div>
     </header>
 
     <main class="container">
+      <nav class="sticky-nav" aria-label="Section shortcuts">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#cv">CV</a>
+      </nav>
+
+      <section class="card impact-snapshot" aria-label="Impact snapshot">
+        <article>
+          <h2>3+</h2>
+          <p>Portfolio projects</p>
+        </article>
+        <article>
+          <h2>5,000+</h2>
+          <p>Return-to-play events analyzed</p>
+        </article>
+        <article>
+          <h2>15</h2>
+          <p>NBA seasons in injury analysis</p>
+        </article>
+      </section>
+
       <section id="about" class="card">
         <h2>Professional Summary</h2>
         <p>
@@ -122,31 +147,41 @@
             Effects of cumulative workload on player injuries (capstone summary)
           </h3>
           <p class="project-meta">Student ID 207677808 · Hebrew University</p>
-          <p>
-            Causal study on NBA game load and injury risk using observational
-            game- and player-level data (injury logs, advanced box scores). I
-            engineered rolling 7-day workload features (games played, minutes,
-            back-to-back flags, usage intensity) and linked each game
-            appearance to a short post-game injury window to define injury
-            opportunities at scale.
-          </p>
-          <p>
-            The analysis moves from naive associations to causal estimators:
-            <strong>propensity score matching (PSM)</strong> to balance
-            high-load vs low-load players on observables,
-            <strong>difference-in-differences (DiD)</strong> to compare changes
-            in risk around load shifts, and an
-            <strong>intention-to-treat (ITT)</strong> design that exploits
-            <strong>exogenous schedule density</strong> (team calendar
-            congestion) rather than coach-discretionary minutes, addressing
-            selection and survivorship bias (including a falsification check on
-            contact injuries). Outcomes were also framed as
-            <strong>per-game injury risk</strong> to separate “more exposure
-            games” from “riskier minutes.” A follow-up sequence analysis used a
-            <strong>double ITT</strong> setup to study carryover from the prior
-            week’s congestion when current-week schedule intensity is held
-            fixed.
-          </p>
+          <div class="project-grid">
+            <section class="project-block">
+              <h4>Problem</h4>
+              <p>
+                Estimate the causal effect of short-term workload buildup on
+                overuse injury risk in NBA players.
+              </p>
+            </section>
+            <section class="project-block">
+              <h4>Data scope</h4>
+              <p>
+                Injury logs + advanced game/player tables, merged into injury
+                opportunities with rolling 7-day load features.
+              </p>
+            </section>
+            <section class="project-block">
+              <h4>Methods and tools</h4>
+              <p>
+                Propensity score matching, DiD, ITT with exogenous schedule
+                density, falsification on contact injuries, and double ITT
+                carryover analysis.
+              </p>
+            </section>
+            <section class="project-block">
+              <h4>Key numeric result</h4>
+              <p>
+                Dense schedule exposure increases overuse injury risk by about
+                25% per game in the treated windows.
+              </p>
+            </section>
+          </div>
+          <ul class="project-findings">
+            <li>Naive negative association flips after bias-aware design.</li>
+            <li>Signal persists under robustness checks and injury-type tests.</li>
+          </ul>
           <p class="project-meta" lang="he" dir="rtl">
             פרויקט מסכם: השפעות עומס מצטבר על פציעות שחקנים
           </p>
@@ -160,7 +195,9 @@
           <p class="project-links">
             <a
               class="project-doc-link"
-              href="/tamir-frisher-personal-website/project-cumulative-workload-player-injuries-207677808.docx"
+              href="project-cumulative-workload-player-injuries-207677808.docx"
+              target="_blank"
+              rel="noopener noreferrer"
               >Download report (.docx)</a
             >
           </p>
@@ -177,20 +214,40 @@
               >github.com/tamirfrisher1-gif/telegram-expense-bot</a
             >
           </p>
-          <p>
-            A production-style Python bot for logging daily expenses inside
-            Telegram: guided category selection, add and list flows, safe
-            delete-from-recent, and lightweight analytics so spending is visible
-            at a glance.
-          </p>
-          <p>
-            Built around the Telegram Bot API with persistent storage via
-            <strong>SQLite</strong> for local use, or <strong>PostgreSQL</strong>
-            when <code>DATABASE_URL</code> is set for hosted deployments. Includes
-            a monthly <strong>pie chart</strong> and a <strong>month-over-month</strong>
-            comparison command. Ships with a <strong>Render</strong> blueprint
-            (<code>render.yaml</code>) to spin up the worker and database together.
-          </p>
+          <div class="project-grid">
+            <section class="project-block">
+              <h4>Problem</h4>
+              <p>
+                Replace manual expense logging with a lightweight chat-first
+                workflow that users actually keep using.
+              </p>
+            </section>
+            <section class="project-block">
+              <h4>Data scope</h4>
+              <p>
+                User-level transaction entries by date and category, persisted
+                either locally or in managed cloud storage.
+              </p>
+            </section>
+            <section class="project-block">
+              <h4>Methods and tools</h4>
+              <p>
+                Python bot flows on Telegram API, SQLite and PostgreSQL storage
+                mode, inline command UX, and Render worker blueprint.
+              </p>
+            </section>
+            <section class="project-block">
+              <h4>Key numeric result</h4>
+              <p>
+                Monthly category pie + month-over-month compare make spending
+                trends visible in one command.
+              </p>
+            </section>
+          </div>
+          <ul class="project-findings">
+            <li>Supports add, list, delete, compare, and chart flows.</li>
+            <li>Deploy-ready with `render.yaml` and environment-based DB switch.</li>
+          </ul>
           <ul class="chips project-tags">
             <li>Python</li>
             <li>Telegram Bot API</li>
@@ -225,72 +282,141 @@
             5,000+ documented return events · 15 seasons (2011-2025) · sensitive
             load injuries (knee, plantar or calf)
           </p>
-          <p>
-            I studied how NBA teams differ in managing
-            <strong>internal-tissue load injuries</strong>, where healing is
-            harder to monitor and return timing is especially sensitive to
-            medical judgment. The work compares teams on two axes: how often
-            players return faster than the league median rest window, and how
-            often they avoid the <strong>same injury recurring</strong> later in
-            the same season after that return.
-          </p>
-          <p>
-            Among teams with a high share of fast returns, outcomes split
-            sharply. For example, on one cluster (including
-            <strong>DEN</strong>, <strong>NYK</strong>, and <strong>LAC</strong>),
-            about <strong>38%</strong> of fast-return episodes were followed by
-            a same-type recurrence in-season. Another cluster (including
-            <strong>HOU</strong>, <strong>DAL</strong>, and <strong>PHX</strong>)
-            returned players as fast or faster, but recurrence was near
-            <strong>20%</strong>. The gap is on the order of
-            <strong>18 percentage points</strong> with very strong statistical
-            evidence (<strong>p &lt; 0.001</strong>).
-          </p>
-          <p>
-            I stress-tested alternative explanations. Injury severity and mean
-            return timing looked similar across groups. Playing time differed in
-            the aggregate, but after restricting to players with the same usage
-            rate, the minutes gap largely disappeared while the recurrence gap
-            remained. I also ran a <strong>within-player</strong> design that
-            compares each athlete only to their own prior returns from the same
-            injury type, and still saw a large gap (about
-            <strong>17 percentage points</strong>, <strong>p &lt; 0.001</strong>),
-            which supports a medical-process story rather than stable player
-            traits. When widening the outcome to all load injuries without
-            isolating internal presentations, the gap shrank to about
-            <strong>8.5 percentage points</strong> but stayed significant, which
-            is consistent with internal-tissue management being the sharpest
-            differentiator.
-          </p>
-          <p>
-            The pattern suggests real heterogeneity in how medical staffs balance
-            speed and safety: some organizations achieve fast return with much
-            lower repeat-injury risk without simply resting everyone longer. The
-            analysis cannot observe internal clinical data, so it cannot name
-            the exact knowledge gap, but it does highlight where better medical
-            decision support and knowledge sharing could reduce preventable
-            recurrences.
-          </p>
-          <figure class="project-chart">
-            <img
-              src="nba-rtp-internal-load-injuries-chart.png?v=20260426-2"
-              alt="Two NBA scatter plots side by side: sensitive load injuries only versus all load injuries, teams by return speed and non re-injury rate with quadrant labels"
-            />
-            <figcaption>
-              Extended dataset (2011-2025): left, sensitive load injuries (knee,
-              plantar or calf) with a clear speed versus safety tradeoff (trend
-              R = -0.36, p = 0.05; avg safety 80.8%). Right, all load injuries
-              (adds hamstring, groin, back, quad) with a flatter league trend
-              (R = -0.15, p = 0.44; avg safety 83.7%). Faded team marks indicate
-              smaller samples (n &lt; 40).
-            </figcaption>
-          </figure>
+          <div class="project-grid">
+            <section class="project-block">
+              <h4>Problem</h4>
+              <p>
+                Identify whether some teams return players fast without paying a
+                recurrence penalty in internal load injuries.
+              </p>
+            </section>
+            <section class="project-block">
+              <h4>Data scope</h4>
+              <p>
+                More than 5,000 documented return events across 2011-2025,
+                focused on knee, plantar, and calf injury types.
+              </p>
+            </section>
+            <section class="project-block">
+              <h4>Methods and tools</h4>
+              <p>
+                Team-level and within-player comparisons, severity and usage
+                controls, clustered recurrence-gap analysis, and broad-outcome
+                sensitivity checks.
+              </p>
+            </section>
+            <section class="project-block">
+              <h4>Key numeric result</h4>
+              <p>
+                Fast-return clusters show about 18pp recurrence spread (38% vs
+                20%, p &lt; 0.001), with about 17pp preserved within-player.
+              </p>
+            </section>
+          </div>
+          <ul class="project-findings">
+            <li>Gap persists after severity/timing controls and usage matching.</li>
+            <li>
+              Expanding to all load injuries reduces gap to 8.5pp but keeps it
+              significant.
+            </li>
+          </ul>
+          <section class="interactive-matrix" id="team-matrix-app">
+            <div class="matrix-header">
+              <h4>Interactive Team Matrix</h4>
+              <p>
+                Explore team-level return-speed vs re-injury risk using
+                sensitive load injuries only (knee and plantar/calf).
+              </p>
+            </div>
+
+            <div class="matrix-controls">
+              <div class="matrix-filters" role="group" aria-label="Filter teams by profile">
+                <button class="matrix-filter active" data-profile="ALL">All</button>
+                <button class="matrix-filter" data-profile="SMART_FAST">Smart &amp; Fast</button>
+                <button class="matrix-filter" data-profile="RECKLESS">Reckless</button>
+                <button class="matrix-filter" data-profile="CONSERVATIVE">Conservative</button>
+                <button class="matrix-filter" data-profile="INEFFECTIVE">Ineffective</button>
+              </div>
+              <label class="matrix-search-label">
+                Team:
+                <input
+                  id="matrixTeamSearch"
+                  type="text"
+                  maxlength="3"
+                  placeholder="e.g. GSW"
+                  aria-label="Search team abbreviation"
+                />
+              </label>
+            </div>
+
+            <div class="matrix-layout">
+              <div class="matrix-canvas-wrap">
+                <svg
+                  id="teamMatrixSvg"
+                  viewBox="0 0 820 460"
+                  role="img"
+                  aria-label="Interactive NBA team matrix chart"
+                ></svg>
+                <div id="teamMatrixTooltip" class="matrix-tooltip" aria-hidden="true"></div>
+              </div>
+              <aside class="matrix-sidepanel" id="matrixSidepanel">
+                <h5>Selected Team</h5>
+                <p class="matrix-side-hint">
+                  Click a team in the chart to pin details.
+                </p>
+                <dl class="matrix-metrics">
+                  <div><dt>Team</dt><dd id="matrixTeam">-</dd></div>
+                  <div><dt>Profile</dt><dd id="matrixProfile">-</dd></div>
+                  <div><dt>Fast return rate (Q1)</dt><dd id="matrixFast">-</dd></div>
+                  <div><dt>Re-injury rate</dt><dd id="matrixReinj">-</dd></div>
+                  <div><dt>Safety rate</dt><dd id="matrixSafety">-</dd></div>
+                  <div><dt>Sample size</dt><dd id="matrixN">-</dd></div>
+                </dl>
+              </aside>
+            </div>
+          </section>
+          <section class="chart-gallery" id="chart-gallery">
+            <div class="gallery-header">
+              <h4>Evidence Charts Gallery</h4>
+              <p>
+                Browse all supporting analyses from the return-to-play project.
+              </p>
+            </div>
+            <div class="gallery-stage">
+              <button class="gallery-nav" id="galleryPrev" aria-label="Previous chart">
+                &#8592;
+              </button>
+              <figure class="gallery-figure">
+                <img
+                  id="galleryImage"
+                  src="chart29_extended_comparison.png"
+                  alt="Extended comparison chart"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption id="galleryCaption"></figcaption>
+              </figure>
+              <button class="gallery-nav" id="galleryNext" aria-label="Next chart">
+                &#8594;
+              </button>
+            </div>
+            <div class="gallery-thumbs" id="galleryThumbs" aria-label="Chart thumbnails"></div>
+          </section>
           <ul class="chips project-tags">
             <li>Sports medicine analytics</li>
             <li>Survival-style return metrics</li>
             <li>Within-player inference</li>
             <li>Robustness checks</li>
           </ul>
+          <p class="project-links">
+            <a
+              class="project-doc-link"
+              href="nba-rtp-internal-load-injuries-chart.png?v=20260426-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open chart</a
+            >
+          </p>
         </article>
       </section>
 
@@ -301,6 +427,8 @@
             <img
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
               alt="Data dashboard visual"
+              loading="lazy"
+              decoding="async"
             />
             <figcaption>Data storytelling and analytics</figcaption>
           </figure>
@@ -308,6 +436,8 @@
             <img
               src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
               alt="Collaboration in a strategy meeting"
+              loading="lazy"
+              decoding="async"
             />
             <figcaption>Strategic decision support</figcaption>
           </figure>
@@ -315,6 +445,8 @@
             <img
               src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80"
               alt="Code editor with machine learning code"
+              loading="lazy"
+              decoding="async"
             />
             <figcaption>Technical and ML development</figcaption>
           </figure>
@@ -323,7 +455,7 @@
     </main>
 
     <footer id="contact">
-      <p>Email: Tamiravraham.frisher@mail.huji.ac.il</p>
+      <p>Email: <a href="mailto:Tamiravraham.frisher@mail.huji.ac.il">Tamiravraham.frisher@mail.huji.ac.il</a></p>
       <p>Phone: +972 52-327-1357</p>
       <p>
         LinkedIn:
@@ -332,14 +464,352 @@
         >
       </p>
       <p>Jerusalem, Israel</p>
-      <p>
-        <a
-          href="/tamir-frisher-personal-website/Tamir%20Frisher%20CV.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Open CV (PDF)</a
-        >
-      </p>
+      <p class="footer-meta">Built for recruiter-friendly review · Fast, clear, and practical.</p>
     </footer>
+    <script>
+      (() => {
+        const app = document.getElementById("team-matrix-app");
+        const svg = document.getElementById("teamMatrixSvg");
+        const tooltip = document.getElementById("teamMatrixTooltip");
+        if (!app || !svg || !tooltip) return;
+
+        const PROFILE_META = {
+          SMART_FAST: { label: "Smart & Fast", color: "#31c48d" },
+          RECKLESS: { label: "Reckless", color: "#ef4444" },
+          CONSERVATIVE: { label: "Conservative", color: "#60a5fa" },
+          INEFFECTIVE: { label: "Ineffective", color: "#f59e0b" },
+        };
+
+        const TEAM_ESPN = {
+          ATL: "atl", BOS: "bos", BKN: "bkn", CHA: "cha", CHI: "chi",
+          CLE: "cle", DAL: "dal", DEN: "den", DET: "det", GSW: "gs",
+          HOU: "hou", IND: "ind", LAC: "lac", LAL: "lal", MEM: "mem",
+          MIA: "mia", MIL: "mil", MIN: "min", NOP: "no", NYK: "ny",
+          OKC: "okc", ORL: "orl", PHI: "phi", PHX: "phx", POR: "por",
+          SAC: "sac", SAS: "sa", TOR: "tor", UTA: "utah", WAS: "wsh",
+        };
+
+        const panelIds = {
+          team: document.getElementById("matrixTeam"),
+          profile: document.getElementById("matrixProfile"),
+          fast: document.getElementById("matrixFast"),
+          reinj: document.getElementById("matrixReinj"),
+          safety: document.getElementById("matrixSafety"),
+          n: document.getElementById("matrixN"),
+        };
+
+        const margin = { top: 26, right: 36, bottom: 56, left: 64 };
+        const width = 820;
+        const height = 460;
+        const plotW = width - margin.left - margin.right;
+        const plotH = height - margin.top - margin.bottom;
+        let selectedTeam = null;
+
+        const ns = "http://www.w3.org/2000/svg";
+        const mk = (name, attrs = {}) => {
+          const el = document.createElementNS(ns, name);
+          Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+          return el;
+        };
+
+        const escapeHtml = (v) =>
+          String(v)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;");
+
+        fetch("team_matrix_data.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("Failed to load matrix data");
+            return res.json();
+          })
+          .then((data) => render(data))
+          .catch(() => {
+            svg.innerHTML = "";
+            const msg = mk("text", {
+              x: "50%",
+              y: "50%",
+              "text-anchor": "middle",
+              fill: "#c8d4f1",
+              "font-size": "14",
+            });
+            msg.textContent = "Matrix data unavailable. Open the static chart below.";
+            svg.appendChild(msg);
+          });
+
+        function render(data) {
+          const teams = data.teams || [];
+          if (!teams.length) return;
+          svg.innerHTML = "";
+
+          const xVals = teams.map((d) => d.fastRate);
+          const yVals = teams.map((d) => d.reinjuryRate);
+          const xMin = Math.min(...xVals) - 4;
+          const xMax = Math.max(...xVals) + 4;
+          const yMin = Math.min(...yVals) - 4;
+          const yMax = Math.max(...yVals) + 4;
+
+          const sx = (x) =>
+            margin.left + ((x - xMin) / (xMax - xMin || 1)) * plotW;
+          const sy = (y) =>
+            margin.top + plotH - ((y - yMin) / (yMax - yMin || 1)) * plotH;
+
+          const qX = sx(data.leagueFastRate);
+          const qY = sy(data.leagueReinjuryRate);
+
+          const backgrounds = [
+            { x: margin.left, y: margin.top, w: qX - margin.left, h: qY - margin.top, fill: "rgba(245,158,11,0.08)" },
+            { x: qX, y: margin.top, w: margin.left + plotW - qX, h: qY - margin.top, fill: "rgba(239,68,68,0.08)" },
+            { x: margin.left, y: qY, w: qX - margin.left, h: margin.top + plotH - qY, fill: "rgba(96,165,250,0.08)" },
+            { x: qX, y: qY, w: margin.left + plotW - qX, h: margin.top + plotH - qY, fill: "rgba(49,196,141,0.08)" },
+          ];
+          backgrounds.forEach((b) =>
+            svg.appendChild(mk("rect", { x: b.x, y: b.y, width: b.w, height: b.h, fill: b.fill }))
+          );
+
+          svg.appendChild(
+            mk("line", { x1: qX, y1: margin.top, x2: qX, y2: margin.top + plotH, stroke: "#7c8bb1", "stroke-dasharray": "5 5", "stroke-width": "1.2" })
+          );
+          svg.appendChild(
+            mk("line", { x1: margin.left, y1: qY, x2: margin.left + plotW, y2: qY, stroke: "#7c8bb1", "stroke-dasharray": "5 5", "stroke-width": "1.2" })
+          );
+
+          const xAxis = mk("line", {
+            x1: margin.left,
+            y1: margin.top + plotH,
+            x2: margin.left + plotW,
+            y2: margin.top + plotH,
+            stroke: "#9fb2d8",
+            "stroke-width": "1",
+          });
+          const yAxis = mk("line", {
+            x1: margin.left,
+            y1: margin.top,
+            x2: margin.left,
+            y2: margin.top + plotH,
+            stroke: "#9fb2d8",
+            "stroke-width": "1",
+          });
+          svg.appendChild(xAxis);
+          svg.appendChild(yAxis);
+
+          for (let i = 0; i <= 5; i += 1) {
+            const tx = xMin + ((xMax - xMin) / 5) * i;
+            const x = sx(tx);
+            svg.appendChild(mk("line", {
+              x1: x, y1: margin.top + plotH, x2: x, y2: margin.top + plotH + 6,
+              stroke: "#8ea1c8", "stroke-width": "1",
+            }));
+            const lbl = mk("text", { x, y: margin.top + plotH + 20, fill: "#adc0e6", "text-anchor": "middle", "font-size": "11" });
+            lbl.textContent = `${Math.round(tx)}%`;
+            svg.appendChild(lbl);
+          }
+          for (let i = 0; i <= 5; i += 1) {
+            const ty = yMin + ((yMax - yMin) / 5) * i;
+            const y = sy(ty);
+            svg.appendChild(mk("line", {
+              x1: margin.left - 6, y1: y, x2: margin.left, y2: y,
+              stroke: "#8ea1c8", "stroke-width": "1",
+            }));
+            const lbl = mk("text", { x: margin.left - 10, y: y + 4, fill: "#adc0e6", "text-anchor": "end", "font-size": "11" });
+            lbl.textContent = `${Math.round(ty)}%`;
+            svg.appendChild(lbl);
+          }
+
+          const xTitle = mk("text", { x: margin.left + plotW / 2, y: height - 16, fill: "#c8d4f1", "text-anchor": "middle", "font-size": "12" });
+          xTitle.textContent = "% Returning in Q1 (fast return)";
+          svg.appendChild(xTitle);
+
+          const yTitle = mk("text", { x: 18, y: margin.top + plotH / 2, fill: "#c8d4f1", "text-anchor": "middle", "font-size": "12", transform: `rotate(-90 18 ${margin.top + plotH / 2})` });
+          yTitle.textContent = "Re-injury Rate (%)";
+          svg.appendChild(yTitle);
+
+          const pointLayer = mk("g", { id: "matrixPoints" });
+          svg.appendChild(pointLayer);
+
+          teams.forEach((team) => {
+            const x = sx(team.fastRate);
+            const y = sy(team.reinjuryRate);
+            const meta = PROFILE_META[team.profile] || PROFILE_META.INEFFECTIVE;
+
+            const g = mk("g", {
+              class: "matrix-team",
+              "data-team": team.team,
+              "data-profile": team.profile,
+              "data-fast": String(team.fastRate),
+              "data-reinjury": String(team.reinjuryRate),
+              "data-safety": String(team.safetyRate),
+              "data-n": String(team.n),
+              transform: `translate(${x} ${y})`,
+            });
+
+            const ring = mk("circle", {
+              r: "17",
+              fill: "rgba(10, 15, 30, 0.8)",
+              stroke: meta.color,
+              "stroke-width": "2",
+            });
+            g.appendChild(ring);
+
+            const espnCode = TEAM_ESPN[team.team] || team.team.toLowerCase();
+            const img = mk("image", {
+              href: `https://a.espncdn.com/i/teamlogos/nba/500/${espnCode}.png`,
+              x: "-12",
+              y: "-12",
+              width: "24",
+              height: "24",
+              preserveAspectRatio: "xMidYMid meet",
+            });
+            g.appendChild(img);
+
+            const label = mk("text", {
+              y: "30",
+              "text-anchor": "middle",
+              "font-size": "10",
+              fill: "#d8e3ff",
+            });
+            label.textContent = team.team;
+            g.appendChild(label);
+
+            g.addEventListener("mouseenter", (event) => showTooltip(event, team));
+            g.addEventListener("mousemove", (event) => moveTooltip(event));
+            g.addEventListener("mouseleave", () => hideTooltip());
+            g.addEventListener("click", () => pinTeam(team));
+            pointLayer.appendChild(g);
+          });
+
+          const filters = Array.from(app.querySelectorAll(".matrix-filter"));
+          const search = document.getElementById("matrixTeamSearch");
+
+          const applyFilters = () => {
+            const active = filters.find((b) => b.classList.contains("active"))?.dataset.profile || "ALL";
+            const query = (search?.value || "").trim().toUpperCase();
+            Array.from(pointLayer.querySelectorAll(".matrix-team")).forEach((el) => {
+              const p = el.dataset.profile || "";
+              const t = el.dataset.team || "";
+              const profileMatch = active === "ALL" || p === active;
+              const searchMatch = !query || t.includes(query);
+              el.classList.toggle("is-hidden", !(profileMatch && searchMatch));
+            });
+          };
+
+          filters.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              filters.forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+              applyFilters();
+            });
+          });
+          search?.addEventListener("input", applyFilters);
+          applyFilters();
+
+          const gsw = teams.find((t) => t.team === "GSW");
+          if (gsw) pinTeam(gsw);
+        }
+
+        function showTooltip(event, team) {
+          const meta = PROFILE_META[team.profile] || PROFILE_META.INEFFECTIVE;
+          tooltip.innerHTML = `
+            <strong>${escapeHtml(team.team)}</strong>
+            <span>${escapeHtml(meta.label)}</span>
+            <span>Fast return: ${team.fastRate.toFixed(1)}%</span>
+            <span>Re-injury: ${team.reinjuryRate.toFixed(1)}%</span>
+            <span>Sample: n=${team.n}</span>
+          `;
+          tooltip.classList.add("visible");
+          moveTooltip(event);
+        }
+
+        function moveTooltip(event) {
+          tooltip.style.left = `${event.clientX + 14}px`;
+          tooltip.style.top = `${event.clientY - 14}px`;
+        }
+
+        function hideTooltip() {
+          tooltip.classList.remove("visible");
+        }
+
+        function pinTeam(team) {
+          selectedTeam = team.team;
+          const meta = PROFILE_META[team.profile] || PROFILE_META.INEFFECTIVE;
+          panelIds.team.textContent = team.team;
+          panelIds.profile.textContent = meta.label;
+          panelIds.fast.textContent = `${team.fastRate.toFixed(2)}%`;
+          panelIds.reinj.textContent = `${team.reinjuryRate.toFixed(2)}%`;
+          panelIds.safety.textContent = `${team.safetyRate.toFixed(2)}%`;
+          panelIds.n.textContent = String(team.n);
+
+          svg.querySelectorAll(".matrix-team").forEach((el) => {
+            el.classList.toggle("is-selected", el.dataset.team === selectedTeam);
+          });
+        }
+      })();
+
+      (() => {
+        const imageEl = document.getElementById("galleryImage");
+        const captionEl = document.getElementById("galleryCaption");
+        const prevBtn = document.getElementById("galleryPrev");
+        const nextBtn = document.getElementById("galleryNext");
+        const thumbsRoot = document.getElementById("galleryThumbs");
+        if (!imageEl || !captionEl || !prevBtn || !nextBtn || !thumbsRoot) return;
+
+        const charts = [
+          { file: "chart22_team_matrix_final.png", title: "Team matrix final", note: "Core team profile matrix: fast return vs same-injury risk." },
+          { file: "chart23_team_matrix_logos.png", title: "Team matrix with logos", note: "Logo-based matrix variant for communication and presentation." },
+          { file: "chart24_strict_reinjury_matrix.png", title: "Strict re-injury matrix", note: "Strict same-injury definition in the same season." },
+          { file: "chart25_q1q2_reinjury_matrix.png", title: "Q1-Q2 return matrix", note: "Fast-return focused matrix using Q1+Q2 exposure." },
+          { file: "chart26_scope_comparison.png", title: "Scope comparison", note: "Sensitive injuries vs broader injury scope comparison." },
+          { file: "chart27_scope_comparison_final.png", title: "Scope comparison final", note: "Refined comparison after scope calibration and cleaning." },
+          { file: "chart28_extended_2011_2025.png", title: "Extended dataset matrix", note: "Extended timeline matrix covering 2011-2025." },
+          { file: "chart29_extended_comparison.png", title: "Extended dual-panel comparison", note: "Sensitive-only panel vs all-load panel side by side." },
+          { file: "chart30a_dose_response.png", title: "Dose-response by injury type", note: "Q1-Q4 return timing vs re-injury rates across injury types." },
+          { file: "chart30b_iv_playoff.png", title: "Playoff IV check", note: "Instrumental variable diagnostic using playoff pressure window." },
+          { file: "chart31_iv_standings.png", title: "Standings IV check", note: "Instrument based on games behind playoff cut-off." },
+          { file: "chart32_extreme_cases.png", title: "Extreme team cases", note: "Event-level trajectories for best and worst profile teams." },
+          { file: "chart33_confounding_checks.png", title: "Confounding checks", note: "Severity and same-player checks to test confounding alternatives." },
+          { file: "chart34_minutes_after_return.png", title: "Minutes after return", note: "Post-return load profile and re-injury relation." },
+          { file: "chart35_usage_filter.png", title: "Usage control analysis", note: "Gap persistence after filtering by player usage level." },
+          { file: "chart36_star_hypothesis.png", title: "Star-player hypothesis test", note: "Checks whether star concentration explains the gap." },
+          { file: "chart37_censoring_check.png", title: "Censoring diagnostics", note: "Exposure-window and censoring robustness tests." },
+          { file: "chart21_smart_teams.png", title: "Smart teams profile", note: "Early profile segmentation from fast vs safe team clusters." }
+        ];
+
+        let current = 0;
+
+        const render = () => {
+          const item = charts[current];
+          imageEl.src = `${item.file}?v=1`;
+          imageEl.alt = item.title;
+          captionEl.textContent = `${item.title} - ${item.note}`;
+          thumbsRoot.querySelectorAll("button").forEach((btn, idx) => {
+            btn.classList.toggle("active", idx === current);
+          });
+        };
+
+        charts.forEach((item, idx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "gallery-thumb";
+          btn.setAttribute("aria-label", item.title);
+          btn.innerHTML = `<img src="${item.file}" alt="${item.title}" loading="lazy" decoding="async" />`;
+          btn.addEventListener("click", () => {
+            current = idx;
+            render();
+          });
+          thumbsRoot.appendChild(btn);
+        });
+
+        prevBtn.addEventListener("click", () => {
+          current = (current - 1 + charts.length) % charts.length;
+          render();
+        });
+        nextBtn.addEventListener("click", () => {
+          current = (current + 1) % charts.length;
+          render();
+        });
+
+        render();
+      })();
+    </script>
   </body>
 </html>
