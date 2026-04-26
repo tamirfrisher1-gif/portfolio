@@ -149,6 +149,35 @@ h2 {
   font-size: 0.92rem;
 }
 
+.project-item {
+  padding-top: 0.25rem;
+}
+
+.project-item h3 {
+  font-size: 1.08rem;
+  margin-bottom: 0.35rem;
+}
+
+.project-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-tags {
+  margin: 0.75rem 0 0.85rem;
+}
+
+.project-doc-link {
+  color: #9ed4ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-doc-link:hover {
+  text-decoration: underline;
+}
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
