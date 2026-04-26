@@ -209,7 +209,7 @@ h1 {
 
 .hero-line em {
   color: var(--gold);
-  font-style: italic;
+  font-style: normal;
 }
 
 .hero-credentials {
