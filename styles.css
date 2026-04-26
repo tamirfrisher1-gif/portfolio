@@ -1,8 +1,8 @@
 :root {
-  --bg: #0b1020;
-  --card: #121a30;
-  --text: #f1f5ff;
-  --muted: #a9b4d0;
+  --bg: #04060d;
+  --card: #090f1f;
+  --text: #e7edff;
+  --muted: #8d9bbb;
   --accent: #4fa3ff;
   --accent-2: #6be4c8;
   --accent-3: #8a7dff;
@@ -20,9 +20,9 @@
 
 body {
   font-family: "Inter", sans-serif;
-  font-weight: 560;
-  background: radial-gradient(circle at top right, #1d2b4f, var(--bg) 60%),
-    linear-gradient(180deg, #090d1a 0%, #0b1020 100%);
+  font-weight: 650;
+  background: radial-gradient(circle at top right, #0f1630, var(--bg) 58%),
+    linear-gradient(180deg, #03050b 0%, #060911 100%);
   color: var(--text);
   line-height: 1.6;
   text-rendering: optimizeLegibility;
@@ -64,8 +64,8 @@ body::before {
   margin: 0 auto;
   padding: 0.5rem 0.8rem;
   border-radius: 999px;
-  background: rgba(10, 16, 30, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(4, 8, 18, 0.82);
+  border: 1px solid rgba(125, 150, 210, 0.26);
   backdrop-filter: blur(8px);
 }
 
@@ -101,7 +101,7 @@ h1 {
   font-size: clamp(2rem, 6vw, 4rem);
   line-height: 1.1;
   margin-bottom: 1rem;
-  font-weight: 850;
+  font-weight: 900;
   letter-spacing: 0.02em;
   text-shadow: 0 0 18px rgba(79, 163, 255, 0.18);
 }
@@ -139,7 +139,7 @@ h1 {
 }
 
 .cta-secondary {
-  background: rgba(13, 20, 38, 0.65);
+  background: rgba(4, 9, 20, 0.92);
   color: var(--text);
   border: 1px solid rgba(139, 173, 255, 0.45);
 }
@@ -167,7 +167,7 @@ h1 {
   gap: 0.45rem 0.65rem;
   padding: 0.5rem 0.65rem;
   border-radius: 999px;
-  background: rgba(13, 20, 38, 0.78);
+  background: rgba(5, 10, 22, 0.94);
   backdrop-filter: blur(8px);
 }
 
@@ -191,8 +191,8 @@ h1 {
 }
 
 .impact-snapshot article {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(120, 146, 202, 0.24);
   border-radius: 12px;
   padding: 0.9rem 0.85rem;
   text-align: center;
@@ -204,8 +204,8 @@ h1 {
 }
 
 .card {
-  background: rgba(18, 26, 48, 0.88);
-  border: 1px solid rgba(141, 176, 255, 0.16);
+  background: rgba(8, 13, 28, 0.95);
+  border: 1px solid rgba(111, 137, 196, 0.28);
   border-radius: 16px;
   padding: var(--space-3);
   backdrop-filter: blur(4px);
@@ -639,8 +639,8 @@ h2 {
 }
 
 .project-block {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(120, 148, 207, 0.24);
   border-radius: 12px;
   padding: 0.75rem;
 }
