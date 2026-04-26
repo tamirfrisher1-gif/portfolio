@@ -161,10 +161,11 @@
         background: linear-gradient(135deg, var(--ink-soft), var(--ink));
       }
 
-      .hero-portrait svg {
+      .hero-portrait img {
         width: 100%;
         height: 100%;
         display: block;
+        object-fit: cover;
       }
 
       .eyebrow {
@@ -508,14 +509,10 @@
         margin: 1.5rem auto 2rem;
         padding-top: 1.4rem;
         border-top: 1px solid var(--gold-line);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.4rem;
         color: var(--ivory-soft);
       }
 
-      .footer-credits-label,
-      .footer-sign-label {
+      .footer-credits-label {
         font-family: "JetBrains Mono", ui-monospace, monospace;
         font-size: 0.72rem;
         text-transform: uppercase;
@@ -538,20 +535,6 @@
 
       .footer-credits a:hover {
         border-bottom-color: var(--gold);
-      }
-
-      .footer-sign {
-        display: grid;
-        gap: 0.35rem;
-        font-family: "JetBrains Mono", ui-monospace, monospace;
-        font-size: 0.8rem;
-        line-height: 1.7;
-        color: var(--ivory-mute);
-      }
-
-      .footer-sign strong {
-        color: var(--gold);
-        font-weight: 500;
       }
 
       #toTop {
@@ -590,9 +573,6 @@
         .contact-grid {
           grid-template-columns: 1fr;
         }
-        footer {
-          grid-template-columns: 1fr;
-        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -617,26 +597,15 @@
         <a href="#contact">Contact</a>
       </nav>
       <div class="hero-content">
-        <div class="hero-portrait" aria-hidden="true">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#131f3e" />
-                <stop offset="100%" stop-color="#0b1834" />
-              </linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="100" fill="url(#bg)" />
-            <text
-              x="100"
-              y="128"
-              font-family="Antonio,'Arial Narrow',Arial,sans-serif"
-              font-weight="700"
-              font-size="110"
-              fill="#ffc72c"
-              text-anchor="middle"
-              letter-spacing="-2"
-            >TF</text>
-          </svg>
+        <div class="hero-portrait">
+          <img
+            src="assets/headshot.jpg"
+            alt="Tamir Frisher"
+            width="180"
+            height="180"
+            loading="eager"
+            decoding="async"
+          />
         </div>
         <div class="hero-copy">
           <p class="eyebrow">Statistics · Data Science · HUJI</p>
@@ -895,17 +864,6 @@
           >
         </p>
         <p>Jerusalem, Israel</p>
-      </div>
-      <div class="footer-sign">
-        <p class="footer-sign-label">Notes</p>
-        <p>
-          Designed and built by <strong>Tamir Frisher</strong> in Jerusalem.
-        </p>
-        <p>
-          In a previous life I commanded an IDF squad of 80 — same job,
-          different units.
-        </p>
-        <p>Last updated April 2026.</p>
       </div>
     </footer>
     <button id="toTop" aria-label="Back to top">&#8593;</button>

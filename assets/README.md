@@ -4,15 +4,13 @@ Brand assets for the site.
 
 ## Files
 
-- `headshot.svg` — placeholder monogram (TF in gold on navy). Used in the hero portrait.
+- `headshot.jpg` — hero portrait (LinkedIn photo). Used in the hero portrait of `index.html` and `portable-profile.html`, and as the og:image / twitter:image.
+- `headshot.svg` — fallback monogram (TF in gold on navy). Not currently used; kept as a backup.
 - `favicon.svg` — small "T" favicon used in the browser tab.
 
-## Swapping in your real headshot
+## Swapping the headshot
 
-When you're ready to put a real photo on the site:
+To replace the photo:
 
-1. Save your headshot as `assets/headshot.jpg` (square, ~600×600 minimum, centered on your face).
-2. In `index.html`, change the hero portrait `<img>` `src` from `assets/headshot.svg` to `assets/headshot.jpg`.
-3. Update the `og:image` meta tag in `index.html` to point at the same file.
-
-The site keeps working fine until then — you'll just see the gold "TF" monogram in the hero circle.
+1. Save your new image as `assets/headshot.jpg` (square crop, ~600×600 minimum, centered on the face).
+2. Hard-refresh the site (Ctrl + F5) to bypass the browser cache. The HTML already points at this file, so no markup changes are needed.

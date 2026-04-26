@@ -1116,9 +1116,6 @@ footer {
   margin: 2rem auto 2.5rem;
   padding-top: 1.6rem;
   border-top: 1px solid var(--gold-line);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
   color: var(--ivory-soft);
 }
 
@@ -1199,9 +1196,6 @@ footer {
   }
   .proj-meta-strip {
     grid-template-columns: 1fr 1fr;
-  }
-  footer {
-    grid-template-columns: 1fr;
   }
 }
 
