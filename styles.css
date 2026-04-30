@@ -1197,7 +1197,23 @@ footer {
     padding-bottom: 0;
   }
   .sticky-nav {
+    display: flex;
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    border-radius: 10px;
+    gap: 0.5rem;
+    padding: 0.35rem 0.55rem;
+  }
+  .sticky-nav::-webkit-scrollbar {
     display: none;
+  }
+  .sticky-nav a {
+    flex: 0 0 auto;
   }
   .proj-meta-strip {
     grid-template-columns: 1fr;
