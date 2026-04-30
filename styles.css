@@ -1101,6 +1101,19 @@ footer {
   border-bottom-color: var(--gold);
 }
 
+.footer-top-btn {
+  width: fit-content;
+  margin-top: 0.35rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--gold-line);
+  border-radius: 4px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 199, 44, 0.08);
+}
+
 .footer-sign {
   display: grid;
   gap: 0.35rem;
