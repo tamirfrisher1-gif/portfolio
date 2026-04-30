@@ -34,7 +34,15 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
+    <nav class="sticky-nav" aria-label="Section shortcuts">
+      <a href="#top">Contact</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+    </nav>
+
+    <header class="hero" id="top">
       <div class="hero-content">
         <div class="hero-portrait">
           <img
@@ -57,7 +65,7 @@
           <p class="hero-credentials">
             M.Sc. Data Science student at the Hebrew University | B.Sc. GPA 88
           </p>
-          <div class="hero-contact" id="contact" aria-label="Contact details">
+          <div class="hero-contact" aria-label="Contact details">
             <a href="mailto:Tamiravraham.frisher@mail.huji.ac.il"
               >Tamiravraham.frisher@mail.huji.ac.il</a
             >
@@ -91,13 +99,6 @@
     </header>
 
     <main class="container">
-      <nav class="sticky-nav" aria-label="Section shortcuts">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-      </nav>
-
       <section id="about" class="card">
         <p class="section-tag">About</p>
         <h2>Data, decisions, and what actually works</h2>
