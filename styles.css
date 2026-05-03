@@ -469,16 +469,24 @@ a {
   padding: 0.28rem 0.72rem;
 }
 
-.course-chip-name {
+.coursework-chips .course-chip-name {
+  display: inline;
   font-size: 0.78rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 500;
   color: #ffffff;
+  letter-spacing: normal;
+  margin-bottom: 0;
 }
 
-.course-chip-score {
+.coursework-chips .course-chip-score {
+  display: inline;
   font-size: 0.78rem;
   font-weight: 700;
   font-family: "JetBrains Mono", ui-monospace, monospace;
   color: var(--gold);
+  letter-spacing: normal;
+  margin-bottom: 0;
 }
 
 /* Skills tiered */
