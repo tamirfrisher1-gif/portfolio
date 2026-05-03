@@ -471,7 +471,7 @@ a {
 
 .course-chip-name {
   font-size: 0.78rem;
-  color: var(--ivory);
+  color: #ffffff;
 }
 
 .course-chip-score {
